@@ -1,0 +1,20 @@
+<div class = 'page-actions col-xs-4'>
+  <h2>Import Products</h2>
+</div>
+
+<%= form_tag admin_import_products_path, multipart: true do %>
+
+  <div class = 'page-actions col-xs-3'>
+    <input type="file" name="file" id="file" class="inputfile" />
+    <label for="file">Choose a file</label>
+    <label id="filename">Select a file to see it's name</label>
+  </div>
+
+  <div class = 'page-actions col-xs-3'>
+    <%= text_field_tag 'column_separtor', nil, placeholder: 'Enter column separator', class: 'separator-input' %>
+  </div>
+
+  <div class = 'page-actions col-xs-2'>
+    <%= submit_tag 'Import', class: 'import-button', icon: 'add', disabled: true %>
+  </div>
+<% end %>
